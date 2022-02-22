@@ -18,3 +18,52 @@ let result = data.some(x => {
 
 console.log(result) //true
 
+
+
+/* ******************* */
+// 값이 배열 내 존재하는지 확인
+var fruits = ['apple', 'banana', 'mango', 'guava'];
+ 
+function checkAvailability(arr, val) {
+    return arr.some(function (arrVal) {
+        return val === arrVal;
+    });
+}
+
+// => 
+// 화살표 함수를 사용하여 값이 존재하는지 확인
+function checkAvailability(arr, val) {
+    return arr.some(arrVal => val === arrVal);
+    
+}
+
+checkAvailability(fruits, 'kela'); //false
+checkAvailability(fruits, 'banana'); //true
+
+
+
+
+/* ******************* */
+// 모든 값을 불린으로 변환
+var TRUTHY_VALUES = [true, 'true', 1];
+
+function getBoolean(a) {
+    'use strict';
+
+    var value = a;
+    
+    if (typeof value === 'string') {
+        // toLowerCase: 문자열을 소문자로 변환
+        // trim: 문자열 양 끝 공백 제거
+        value = value.toLowerCase().trim();
+    }
+
+    return TRUTHY_VALUES.some(function (t) {
+        return t === value;
+    })
+}
+
+getBoolean(false); // false
+getBoolean('false'); // false
+getBoolean(1); // true
+getBoolean('true'); // true
