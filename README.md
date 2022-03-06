@@ -25,3 +25,20 @@ console.log(firstElement);
 // expected output: 1
 
 ```
+
+
+### reduce()
+빈 요소를 제외하고 배열 내에 존재하는 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환한다.
+```javascript
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// expected output: 10
+```
